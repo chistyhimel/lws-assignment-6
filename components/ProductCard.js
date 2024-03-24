@@ -6,7 +6,10 @@ import CategoryName from "./CategoryName";
 export const ProductCard = ({ product }) => {
   const router = useRouter();
   return (
-    <div onClick={() => router.push(`/products/${product.id}`)}>
+    <div
+      className="cursor-pointer"
+      onClick={() => router.push(`/products/${product.id}`)}
+    >
       <div className="relative delay-150 w-auto h-[205px] lg:h-[310px] bg-[#f8f8f8] transition-all duration-3000 ease-in-out transform">
         <Image
           src={product.thumbnail}
@@ -16,10 +19,8 @@ export const ProductCard = ({ product }) => {
         />
       </div>
       <h2 className="text-sm lg:text-base mt-2">
-        <a className="text-base font-bold" href={`./productPage/${product.id}`}>
-          {product.title}
-        </a>{" "}
-        (<CategoryName>{product.category}</CategoryName>)
+        <p className="text-base inline font-bold">{product.title}</p> (
+        <CategoryName>{product.category}</CategoryName>)
       </h2>
       <p className="text-[#919090] text-sm ">{product.description}</p>
 

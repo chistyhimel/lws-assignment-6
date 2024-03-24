@@ -1,13 +1,8 @@
-import {
-  getProductCategories,
-  getProductsByCategory,
-} from "@/app/data/products";
 import CategoryButton from "@/components/CategoryButton";
 import HeroSection from "@/components/HeroSection";
 import Newsletter from "@/components/Newsletter";
 import { ProductCard } from "@/components/ProductCard";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { getProductCategories, getProductsByCategory } from "@/utils/produts";
 
 export async function generateStaticParams() {
   return getProductCategories().map((category) => ({

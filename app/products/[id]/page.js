@@ -1,13 +1,10 @@
-import { products } from "@/app/data/products";
 import CategoryName from "@/components/CategoryName";
 import StarIcon from "@/public/svg/star.svg";
+import { getProductById } from "@/utils/produts";
 import Image from "next/image";
-import React from "react";
 
-export default function Product({ params }) {
-  const product = products.find((product) => product.id == params.id);
+export default function Product({ params: { id } }) {
   const {
-    id,
     title,
     description,
     price,
@@ -18,7 +15,7 @@ export default function Product({ params }) {
     category,
     thumbnail,
     images,
-  } = product;
+  } = getProductById(id);
 
   return (
     <main className="h-screen">
@@ -39,7 +36,7 @@ export default function Product({ params }) {
                   key={id}
                   src={img}
                   alt={title}
-                  className="w-[100px] h-[100px] mx-auto border object-cover"
+                  className="w-[100px] cursor-pointer h-[100px] mx-auto border object-cover"
                   width={100}
                   height={100}
                 />
@@ -48,7 +45,7 @@ export default function Product({ params }) {
           </div>
           <div className="w-full lg:w-5/12">
             <h1 className="italic text-xl lg:text-3xl font-serif font-semibold">
-              iPhone 9
+              {title}
             </h1>
             <CategoryName>{category}</CategoryName>
 
@@ -68,18 +65,16 @@ export default function Product({ params }) {
             <div>
               <p className="my-3">
                 <span className="text-rose-600 opacity-60 line-through">
-                  ${price}
+                  ${((price * (100 + discountPercentage)) / 100).toFixed(2)}
                 </span>
-                <span className="font-bold text-2xl">
-                  ${discountPercentage}
-                </span>
+                <span className="font-bold text-2xl">${price}</span>
               </p>
             </div>
             <div>
               <p className="leading-7">{description}</p>
 
               <button className="w-full bg-[#1a1a1a] hover:bg-[#3a3a3a] text-center py-3 mt-5 text-white rounded-full">
-                Add To Cart - ${discountPercentage}
+                Add To Cart - ${price}
               </button>
             </div>
           </div>

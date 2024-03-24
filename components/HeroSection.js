@@ -1,6 +1,5 @@
 import HeaderImg from "@/public/header.webp";
 import Image from "next/image";
-import React from "react";
 
 export default function HeroSection() {
   return (

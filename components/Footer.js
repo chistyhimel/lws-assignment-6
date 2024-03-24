@@ -1,5 +1,3 @@
-import React from "react";
-
 function Footer() {
   return (
     <footer className="w-11/12 lg:w-10/12 max-w-7xl mx-auto flex flex-wrap items-center justify-between py-10 lg:py-16">

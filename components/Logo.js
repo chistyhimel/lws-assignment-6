@@ -1,7 +1,6 @@
 import LogoImg from "@/public/lws-logo-black.svg";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 function Logo() {
   return (

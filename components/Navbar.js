@@ -2,7 +2,6 @@ import AvatarIcon from "@/public/svg/avatar.svg";
 import MenuIcon from "@/public/svg/menu.svg";
 import ShoppingCartIcon from "@/public/svg/shopping-Cart.svg";
 import Image from "next/image";
-import React from "react";
 import Logo from "./Logo";
 
 function Navbar() {
