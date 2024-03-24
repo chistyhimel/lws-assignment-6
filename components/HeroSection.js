@@ -8,8 +8,8 @@ export default function HeroSection() {
       <Image
         src={HeaderImg}
         alt="Header Image"
-        layout="fill"
-        objectFit="cover"
+        fill={true}
+        className="object-cover"
       />
       <div className="z-10 relative mb-5 w-10/12 max-w-7xl text-white mx-auto">
         <h1 className="text-2xl lg:text-3xl font-serif">

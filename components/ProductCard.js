@@ -11,8 +11,8 @@ export const ProductCard = ({ product }) => {
         <Image
           src={product.thumbnail}
           alt={product.title}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
+          className="object-cover"
         />
       </div>
       <h2 className="text-sm lg:text-base mt-2">

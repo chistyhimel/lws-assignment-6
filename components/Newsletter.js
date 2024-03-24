@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Newsletter() {
   return (
     <section className="bg-[#ced3ca] py-5 lg:py-16">
